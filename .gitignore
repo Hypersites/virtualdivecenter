@@ -1,2 +1,5 @@
 /app/config/security.yml
 /app/config/parameters.yml
+/app/logs/
+/vendor/
+/app/cache/
