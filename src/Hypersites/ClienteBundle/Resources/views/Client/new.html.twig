@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Client creation</h1>
+    
+    {{ form_start(form,  {'style': 'horizontal' } ) }}
+        {{ form_errors(form) }}
+        {{ form_row(form.firstName) }}
+        {{ form_row(form.lastName) }}
+        {{ form_row(form.birthday) }}
+        {{ form_row(form.fiscaldocument) }}
+        {{ form_row(form.telephone) }}
+        {{ form_row(form.cellphone) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.address.0.address1) }}
+        {{ form_row(form.address.0.address2) }}
+        {{ form_row(form.address.0.city) }}
+        {{ form_row(form.address.0.state) }}
+        {{ form_row(form.address.0.country) }}
+        {{ form_row(form.address.0.zip) }}
+        {{ form_row(form.address.0.reference) }}
+
+    {{ form_end(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('client') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}
