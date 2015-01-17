@@ -19,6 +19,9 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Hypersites\ClienteBundle\HypersitesClienteBundle(),
+            new Hypersites\TourismBundle\HypersitesTourismBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new Hypersites\Commercial\SupplierBundle\HypersitesCommercialSupplierBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

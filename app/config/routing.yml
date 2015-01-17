@@ -1,3 +1,13 @@
+hypersites_commercial_supplier:
+    resource: "@HypersitesCommercialSupplierBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+hypersites_tourism:
+    resource: "@HypersitesTourismBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 hypersites_cliente:
     resource: "@HypersitesClienteBundle/Controller/"
     type:     annotation

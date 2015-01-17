@@ -89,6 +89,11 @@ class Address
      * @ORM\ManyToMany(targetEntity="Client", mappedBy="address")
      */
     private $clients;
+    
+        /**
+     * @ORM\ManyToMany(targetEntity="Hypersites\Commercial\SupplierBundle\Entity\Supplier", mappedBy="address")
+     */
+    private $suppliers;
 
 
     public function __construct() 
@@ -96,6 +101,7 @@ class Address
         $this->createdAt = new \DateTime();
         $this->updatedAt = clone $this->createdAt;
         $this->clients = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->suppliers = new \Doctrine\Common\Collections\ArrayCollection();
     }
     /**
      * Get id
@@ -334,6 +340,17 @@ class Address
         $this->clients->add($client);
         return $this;
     }
+    public function getSuppliers() {
+        return $this->suppliers;
+    }
 
-
+    public function setSuppliers($suppliers) {
+        $this->suppliers = $suppliers;
+        return $this;
+    }
+    
+    public function addSupplier (\Hypersites\Commercial\SupplierBundle\Entity\Supplier $supplier) {
+        $this->suppliers->add($supplier);
+        return $this;
+    }
 }
