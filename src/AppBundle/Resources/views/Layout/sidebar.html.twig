@@ -1,0 +1,11 @@
+<div class="nav-canvas">
+    <div class="nav-sm nav nav-stacked">
+
+    </div>
+    <ul class="nav nav-pills nav-stacked main-menu">
+        <li class="nav-header">{{ submenu.name }}</li>
+        {% for item in submenu.items %}
+        <li><a class = "{{ item.class }}" href="{{ item.link }}"><i class="glyphicon {{ item.icon }}"></i><span> {{ item|trans }}</span></a></li>
+        {% endfor %}
+    </ul>
+</div>

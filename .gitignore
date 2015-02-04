@@ -4,3 +4,4 @@
 /vendor/
 /app/cache/
 .idea/
+web/*

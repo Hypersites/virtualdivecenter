@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Destination
  *
- * @ORM\Table()
+ * @ORM\Table(name = "destination")
  * @ORM\Entity(repositoryClass="Hypersites\TourismBundle\Entity\DestinationRepository")
  */
 class Destination

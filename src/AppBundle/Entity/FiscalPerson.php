@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Class FiscalPerson
  * @package AppBundle\Entity
- *
+ * @ORM\Entity
  */
 class FiscalPerson {
 
