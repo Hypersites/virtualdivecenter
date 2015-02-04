@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Address
  *
- * @ORM\Table()
+ * @ORM\Table(name="address")
  * @ORM\Entity(repositoryClass="Hypersites\ClienteBundle\Entity\AddressRepository")
  */
 class Address
@@ -90,17 +90,13 @@ class Address
      * @ORM\Column(name="updatedAt", type="datetime")
      */
     private $updatedAt;
-    
-    
+
+
     /**
-     * @ORM\ManyToMany(targetEntity="Client", mappedBy="address")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Person", mappedBy="address")
      */
     private $clients;
-    
-    /**
-     * @ORM\ManyToMany(targetEntity="Hypersites\Commercial\SupplierBundle\Entity\Supplier", mappedBy="address")
-     */
-    private $suppliers;
+
 
 
     public function __construct() 
@@ -375,6 +371,22 @@ class Address
     public function addSupplier (Hypersites\Commercial\SupplierBundle\Entity\Supplier $supplier) {
         $this->suppliers->add($supplier);
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNeighborhood()
+    {
+        return $this->neighborhood;
+    }
+
+    /**
+     * @param string $neighborhood
+     */
+    public function setNeighborhood($neighborhood)
+    {
+        $this->neighborhood = $neighborhood;
     }
 
 }

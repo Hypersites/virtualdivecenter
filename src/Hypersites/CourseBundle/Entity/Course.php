@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Course
  *
- * @ORM\Table()
+ * @ORM\Table(name="course")
  * @ORM\Entity(repositoryClass="Hypersites\ClienteBundle\Entity\CourseRepository")
  */
 class Course

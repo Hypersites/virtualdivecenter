@@ -10,8 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Person
  *
  * @ORM\Entity
- * @ORM\Table(name="person")
- * @ORM\Table(name="person", indexes={@ORM\Index(name="client_name", columns={"first_name", "last_name"}),
+ * @ORM\Table(name="person"),
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="type", type="string")
  * @ORM\DiscriminatorMap({"person" = "FiscalPerson", "company" = "Company"})
@@ -59,7 +58,7 @@ abstract class Person
     /**
      * @var Address
      *
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Address")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Address", inversedBy="clients")
      * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
      */
     protected $address;

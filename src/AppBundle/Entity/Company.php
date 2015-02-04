@@ -7,6 +7,12 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * Class Company
+ * @package AppBundle\Entity
+ *
+ * @ORM\Entity
+ */
 class Company extends Person
 {
     /**

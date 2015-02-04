@@ -8,11 +8,11 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 
 /**
- * @UniqueEntity("fiscal_document")
- * @ORM\Index(name="idx_client_birthday", columns={"birthday"})})
+ * Class FiscalPerson
+ * @package AppBundle\Entity
  *
  */
 class FiscalPerson {

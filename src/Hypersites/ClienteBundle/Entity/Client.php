@@ -4,18 +4,19 @@ namespace Hypersites\ClienteBundle\Entity;
 
 use AppBundle\Entity\Person;
 use Doctrine\ORM\Mapping as ORM;
+use AppBundle\Entity\Address;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Client
  *
  *
  * @ORM\Entity(repositoryClass="Hypersites\ClienteBundle\Entity\ClientRepository")
+ * @ORM\Table(name="client")
  * 
  * 
  */
-class Client extends Person
+class Client
 {
     /**
      * @var integer
@@ -23,9 +24,18 @@ class Client extends Person
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
-     * 
+     *
      */
-    private $id;
+    protected $id;
+
+    /**
+     * @var Person
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Person")
+     * @ORM\JoinColumn(name="person_id", referencedColumnName="id")
+     */
+    protected $person;
+
+
 
     /**
      * @var array
@@ -42,27 +52,19 @@ class Client extends Person
     private $certifications;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="createdAt", type="datetime")
+     * @var DateTime
+     * @ORM\Column(name="c")
      */
     private $createdAt;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="updatedAt", type="datetime")
-     */
-    private $updatedAt;
-
+    private $protectedAt;
 
     
     public function __construct()
     {
         $this->createdAt = new \DateTime();
-        $this->updatedAt = new \DateTime(); 
-        $this->address = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->address->add(new Address());
+        $this->updatedAt = new \DateTime();
+        $this->person->setAddress(new Address());
         $this->courses = new \Doctrine\Common\Collections\ArrayCollection();
         $this->certifications = new \Doctrine\Common\Collections\ArrayCollection();
         
