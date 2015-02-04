@@ -1,6 +1,6 @@
 <?php
 
-namespace Hypersites\ClienteBundle\Entity;
+namespace Hypersites\CourseBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

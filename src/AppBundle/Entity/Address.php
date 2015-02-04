@@ -1,6 +1,6 @@
 <?php
 
-namespace Hypersites\ClienteBundle\Entity;
+namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -34,6 +34,13 @@ class Address
      * @ORM\Column(name="address2", type="string", length=255, nullable=true)
      */
     private $address2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="neighborhood", type="string", length=255, nullable=true)
+     */
+    private $neighborhood;
 
     /**
      * @var string
@@ -90,7 +97,7 @@ class Address
      */
     private $clients;
     
-        /**
+    /**
      * @ORM\ManyToMany(targetEntity="Hypersites\Commercial\SupplierBundle\Entity\Supplier", mappedBy="address")
      */
     private $suppliers;
@@ -334,23 +341,40 @@ class Address
     public function setClients( array $client) {
         $this->clients = $client;
     }
-    
+
+    /**
+     * @param Client $client
+     * @return $this
+     */
     public  function addClient( Client $client) 
     {
         $this->clients->add($client);
         return $this;
     }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
     public function getSuppliers() {
         return $this->suppliers;
     }
 
-    public function setSuppliers($suppliers) {
+    /**
+     * @param array $suppliers
+     * @return $this
+     */
+    public function setSuppliers(array $suppliers) {
         $this->suppliers = $suppliers;
         return $this;
     }
-    
-    public function addSupplier (\Hypersites\Commercial\SupplierBundle\Entity\Supplier $supplier) {
+
+    /**
+     * @param Hypersites\Commercial\SupplierBundle\Entity\Supplier $supplier
+     * @return $this
+     */
+    public function addSupplier (Hypersites\Commercial\SupplierBundle\Entity\Supplier $supplier) {
         $this->suppliers->add($supplier);
         return $this;
     }
+
 }

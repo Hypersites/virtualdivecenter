@@ -1,3 +1,8 @@
+hypersites_course:
+    resource: "@HypersitesCourseBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 hypersites_commercial_supplier:
     resource: "@HypersitesCommercialSupplierBundle/Controller/"
     type:     annotation

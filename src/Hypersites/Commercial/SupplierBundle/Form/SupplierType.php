@@ -19,9 +19,9 @@ class SupplierType extends AbstractType
                 'required'=>true,
                 'label' => 'Name or Company Name'
             ))
-            ->add('website', 'text', array('label'=>'Website'))
-            ->add('description', 'textarea', array('label' => 'Description'))
-            ->add('logo', 'file')
+            ->add('website', 'text', array('required'=>false, 'label'=>'Website'))
+            ->add('description', 'textarea', array('required'=>false, 'label' => 'Description'))
+            ->add('logo', 'file', array('required'=>false))
             ->add('kindPerson', 'choice', array(
                     'expanded'=>true, 
                     'multiple'=>false,

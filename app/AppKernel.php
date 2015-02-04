@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Hypersites\TourismBundle\HypersitesTourismBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Hypersites\Commercial\SupplierBundle\HypersitesCommercialSupplierBundle(),
+            new Hypersites\CourseBundle\HypersitesCourseBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
