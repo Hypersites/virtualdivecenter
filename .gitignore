@@ -5,3 +5,4 @@
 /app/cache/
 .idea/
 web/*
+phpunit.xml
