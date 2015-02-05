@@ -1,0 +1,14 @@
+{% if info is defined %}
+    {% for infoblock in info %}
+        <div class="col-md-3 col-sm-3 col-xs-6">
+            <a data-toggle="tooltip" title="{{ infoblock.count }} {{ infoblock.description }}" class="well top-block" href="#">
+                <i class="glyphicon glyphicon-{{ infoblock.icon }} {{ infoblock.color }}"></i>
+
+                <div>{{ infoblock.fullDescription }}</div>
+                <div>{{ infoblock.fullCount }}</div>
+                <span class="notification">{{ infoblock.notifications }}</span>
+            </a>
+        </div>
+
+    {% endfor %}
+{% endif %}

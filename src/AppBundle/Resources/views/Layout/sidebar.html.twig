@@ -3,9 +3,13 @@
 
     </div>
     <ul class="nav nav-pills nav-stacked main-menu">
-        <li class="nav-header">{{ submenu.name }}</li>
-        {% for item in submenu.items %}
-        <li><a class = "{{ item.class }}" href="{{ item.link }}"><i class="glyphicon {{ item.icon }}"></i><span> {{ item|trans }}</span></a></li>
-        {% endfor %}
+        {% if submenu is defined %}
+            <li class="nav-header">{{ submenu.name }}</li>
+            {% for item in submenu.items %}
+                <li><a class = "{{ item.class }}" href="{{ item.link }}"><i class="glyphicon {{ item.icon }}"></i><span> {{ item|trans }}</span></a></li>
+            {% endfor %}
+        {% else %}
+            <li class="nav-header">{% trans %} Submenu {% endtrans %}</li>
+        {% endif %}
     </ul>
 </div>

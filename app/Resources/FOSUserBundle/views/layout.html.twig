@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Divecenter Management System{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ asset('bundles/app/css/bootstrap-cerulean.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/charisma-app.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/fullcalendar/dist/fullcalendar.css') }}" rel='stylesheet'>
+    <link href="{{ asset('bundles/app/fullcalendar/dist/fullcalendar.print.css') }}" rel='stylesheet' media='print'>
+    <link href="{{ asset('bundles/app/chosen/chosen.min.css') }}" rel='stylesheet'>
+    <link href="{{ asset('bundles/app/colorbox/example3/colorbox.css') }}" rel='stylesheet'>
+    <link href="{{ asset('bundles/app/responsive-tables/responsive-tables.css') }}" rel='stylesheet'>
+    <link href="{{ asset('bundles/app/bootstrap-tour/build/css/bootstrap-tour.min.css') }}" rel='stylesheet'>
+    <link href="{{ asset('bundles/app/css/jquery.noty.css') }}" rel='stylesheet'>
+    <link href="{{ asset('bundles/app/css/noty_theme_default.css') }}" rel='stylesheet'>
+    <link href="{{ asset('bundles/app/css/elfinder.min.css') }}" rel='stylesheet'>
+    <link href="{{ asset('bundles/app/css/elfinder.theme.css') }}" rel='stylesheet'>
+    <link href="{{ asset('bundles/app/css/jquery.iphone.toggle.css') }}" rel='stylesheet'>
+    <link href="{{ asset('bundles/app/css/uploadify.css') }}" rel='stylesheet'>
+    <link href="{{ asset('bundles/app/css/animate.min.css') }}" rel='stylesheet'>
+
+    {% block stylesheets %}{% endblock %}
+    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+    {% block headscripts %}{% endblock %}
+
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <!-- Include all JavaScripts, compiled by Assetic -->
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    {% block javascripts %}{% endblock %}
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+</head>
+
+<body>
+<div class="ch-container">
+    <div class="row">
+
+        <div class="row">
+            <div class="col-md-12 center login-header">
+                <h2>{% trans %} Welcome to Webdivecenter {% endtrans %}</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="well col-md-5 center login-box">
+                <div class="alert alert-info">
+                    {% trans %}Please login with your Username and Password. {% endtrans %}
+                </div>
+                {% block content %}
+                    {% block fos_user_content %}{% endblock %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<hr>
+<footer class="row">
+    <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy;{% trans %} Developed By {% endtrans %} <a href="http://www.hypersites.com.br">Hypersites</a>
+    </p>
+</footer>
+
+<script src="{{ asset('bundles/app/dist/js/bootstrap.min.js')}}"></script>
+
+<!-- library for cookie management -->
+<script src="{{ asset('bundles/app/js/jquery.cookie.js')}}"></script>
+<!-- calender plugin -->
+<script src="{{ asset('bundles/app/js/moment/min/moment.min.js')}}"></script>
+<script src="{{ asset('bundles/app/fullcalendar/dist/fullcalendar.min.js')}}"></script>
+<!-- data table plugin -->
+<script src="{{ asset('bundles/app/js/jquery.dataTables.min.js')}}"></script>
+
+<!-- select or dropdown enhancer -->
+<script src="{{ asset('bundles/app/chosen/chosen.jquery.min.js')}}"></script>
+<!-- plugin for gallery image view -->
+<script src="{{ asset('bundles/app/colorbox/jquery.colorbox-min.js')}}"></script>
+<!-- notification plugin -->
+<script src="{{ asset('bundles/app/js/jquery.noty.js')}}"></script>
+<!-- library for making tables responsive -->
+<script src="{{ asset('bundles/app/responsive-tables/responsive-tables.js')}}"></script>
+<!-- tour plugin -->
+<script src="{{ asset('bundles/app/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js')}}"></script>
+<!-- star rating plugin -->
+<script src="{{ asset('bundles/app/js/jquery.raty.min.js')}}"></script>
+<!-- for iOS style toggle switch -->
+<script src="{{ asset('bundles/app/js/jquery.iphone.toggle.js')}}"></script>
+<!-- autogrowing textarea plugin -->
+<script src="{{ asset('bundles/app/js/jquery.autogrow-textarea.js')}}"></script>
+<!-- multiple file upload plugin -->
+<script src="{{ asset('bundles/app/js/jquery.uploadify-3.1.min.js')}}"></script>
+<!-- history.js for cross-browser state change on ajax -->
+<script src="{{ asset('bundles/app/js/jquery.history.js')}}"></script>
+<!-- application script for Charisma demo -->
+<script src="{{ asset('bundles/app/js/charisma.js')}}"></script>
+</body>
+
+</html>

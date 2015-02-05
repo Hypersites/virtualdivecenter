@@ -57,7 +57,7 @@ class Client
      */
     private $createdAt;
 
-    private $protectedAt;
+    private $updatedAt;
 
     
     public function __construct()
@@ -160,5 +160,37 @@ class Client
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return Person
+     */
+    public function getPerson()
+    {
+        return $this->person;
+    }
+
+    /**
+     * @param Person $person
+     */
+    public function setPerson($person)
+    {
+        $this->person = $person;
     }
 }

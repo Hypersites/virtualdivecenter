@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @package AppBundle\Entity
  * @ORM\Entity
  */
-class FiscalPerson {
+class FiscalPerson extends  Person{
 
     /**
      * @var string
