@@ -15,10 +15,23 @@ class FiscalPersonType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('name', 'text', array('label'=>'First Name:',
+                'attr'=>array('maxlength' => 255)))
+            ->add('initial', 'text', array('label'=> 'Initials:',
+                'required'=>false,
+                'empty_data'=>null,
+                'attr'=>array('maxlength' => 5)))
+            ->add('lastName', 'text', array('label'=>'Last Name:',
+                'attr'=>array('maxlength' => 255), 'required'=>false))
             ->add('fiscalDocument')
             ->add('identity')
             ->add('birthday')
+            ->add('email', 'email', array('label'=>'E-mail:'))
+            ->add('residentialPhone', 'text', array('label'=>'Home Phone:','required'=>false))
+            ->add('cellPhone', 'text', array('label'=>'Cellphone:', 'required' => false))
+            ->add('address', new AddressType(), array('label'=>'Address Information:'))
         ;
+
     }
     
     /**

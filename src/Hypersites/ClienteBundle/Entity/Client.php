@@ -2,6 +2,7 @@
 
 namespace Hypersites\ClienteBundle\Entity;
 
+use AppBundle\Entity\FiscalPerson;
 use AppBundle\Entity\Person;
 use Doctrine\ORM\Mapping as ORM;
 use AppBundle\Entity\Address;
@@ -52,11 +53,24 @@ class Client
     private $certifications;
 
     /**
+     * @var array
+     *
+     * @ORM\Column(name = "orders", type="array")
+     */
+    private $orders;
+
+
+
+    /**
      * @var DateTime
-     * @ORM\Column(name="c")
+     * @ORM\Column(name="created_at")
      */
     private $createdAt;
 
+    /**
+     * @var Datetime
+     * @ORM\Column(name="updated_at")
+     */
     private $updatedAt;
 
     
@@ -64,11 +78,11 @@ class Client
     {
         $this->createdAt = new \DateTime();
         $this->updatedAt = new \DateTime();
+        $this->setPerson(new FiscalPerson());
         $this->person->setAddress(new Address());
         $this->courses = new \Doctrine\Common\Collections\ArrayCollection();
         $this->certifications = new \Doctrine\Common\Collections\ArrayCollection();
-        
-        
+        $this->orders = new \Doctrine\Common\Collections\ArrayCollection();
     }
     /**
      * Set courses
@@ -192,5 +206,21 @@ class Client
     public function setPerson($person)
     {
         $this->person = $person;
+    }
+
+    /**
+     * @return array
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
+
+    /**
+     * @param array $orders
+     */
+    public function setOrders($orders)
+    {
+        $this->orders = $orders;
     }
 }

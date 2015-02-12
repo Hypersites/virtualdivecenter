@@ -32,6 +32,7 @@ class ClientController extends Controller
         $entities = $em->getRepository('HypersitesClienteBundle:Client')->findAll();
 
         return array(
+            'breadcrumbs'=>array('Home','Clients'),
             'entities' => $entities,
         );
     }
@@ -57,6 +58,7 @@ class ClientController extends Controller
         }
 
         return array(
+            'breadcrumbs'=>array('Home','Clients'),
             'entity' => $entity,
             'form'   => $form->createView(),
         );
@@ -94,6 +96,7 @@ class ClientController extends Controller
         $form   = $this->createCreateForm($entity);
 
         return array(
+            'breadcrumbs'=>array('Home','Clients'),
             'entity' => $entity,
             'form'   => $form->createView(),
         );

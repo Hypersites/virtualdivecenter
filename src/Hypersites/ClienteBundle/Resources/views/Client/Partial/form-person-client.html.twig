@@ -1,0 +1,19 @@
+{{ form_start(form,  {'style': 'horizontal' } ) }}
+        {{ form_errors(form) }}
+        {{ form_row(form.person.name)}}
+        {{ form_row(form.person.initial)}}
+        {{ form_row(form.person.lastName)}}
+        {{ form_row(form.person.fiscalDocument)}}
+        {{ form_row(form.person.identity)}}
+        {{ form_row(form.person.birthday)}}
+        {{ form_row(form.person.residentialPhone)}}
+        {{ form_row(form.person.cellPhone)}}
+        {{ form_row(form.person.email)}}
+        {{ form_row(form.person.address.address1)}}
+        {{ form_row(form.person.address.address2)}}
+        {{ form_row(form.person.address.city)}}
+        {{ form_row(form.person.address.state)}}
+        {{ form_row(form.person.address.country)}}
+        {{ form_row(form.person.address.zip)}}
+        {{ form_row(form.person.address.reference)}}
+    {{ form_end(form) }}
